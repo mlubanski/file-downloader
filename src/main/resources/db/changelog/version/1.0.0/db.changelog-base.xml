@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+        				http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+	<changeSet id="1532552490" author="mlubanski">
+		<createTable tableName="DOWNLOAD_STATUS">
+			<column name="ID" type="varchar(50)" autoIncrement="false">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="TYPE" type="varchar(50)">
+				<constraints nullable="false" />
+			</column>
+			<column name="URL" type="varchar(2000)">
+				<constraints nullable="false" />
+			</column>
+			<column name="USER" type="varchar(50)">
+				<constraints nullable="true" />
+			</column>
+			<column name="PASSWORD" type="varchar(50)">
+				<constraints nullable="true" />
+			</column>
+			<column name="STATE" type="varchar(50)">
+				<constraints nullable="false" />
+			</column>
+			<column name="PRIORITY" type="smallint">
+				<constraints nullable="true" />
+			</column>
+		</createTable>
+	</changeSet>
+</databaseChangeLog>
